@@ -1,6 +1,5 @@
 const http = require('http');
-const express = require('express');
-const app = express();
+const app = require('./app');
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -13,7 +12,7 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '4200');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const errorHandler = error => {
@@ -31,7 +30,7 @@ const errorHandler = error => {
       console.error(bind + ' is already in use.');
       process.exit(1);
       break;
-    default:
+      default:
       throw error;
   }
 };
