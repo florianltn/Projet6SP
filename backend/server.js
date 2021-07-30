@@ -1,4 +1,5 @@
 const http = require('http');
+const express = require('express');
 const app = require('./app');
 
 const normalizePort = val => {
@@ -45,3 +46,9 @@ server.on('listening', () => {
 });
 
 server.listen(port);
+
+app.get('/' , (req,res)=>{
+  // 200 status code means OK
+ /* res.json(nomVariable)*/
+ res.send("hello")
+})
